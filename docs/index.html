@@ -4,35 +4,91 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="estilos.css">
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 	<title>APP</title>
  
 </head>
 <body>
 
-    <div class="principal">
-		
-		<input class="imput" id="imput" type="file"/>
-		<div class="wrap">
-			<form class="formulario" action="">
-				<input type="text" id="tareaInput" placeholder="Agrega tu tarea">
-				<input type="button" class="boton" id="btn-agregar" value="Agregar Tarea">
-			</form>
-		</div>
-	</div>
-	<div>
-	
+<div id="header" class="bg-red-50 shadow h-64 w-full flex flex-col items-center justify-start pt-6">
+	 <div class="bg-amber-300 rounded-md mr-6 w-80 p-4">
+        <h1 class="font-mono font-bold text-4xl text-white">MY TASK</h1>
+        <h4 class="font-mono text-lg text-white">10 OCT 2025</h4>
+        <h6 class="font-mono text-sm text-gray-800">Tareas Disponibles</h6>
+    </div>
+  <div class="w-3xs mt-4 mr-8">
+    <div class="bg-red-500 p-2 rounded-t">
+        <h1 class="text-white">Agendar Nueva Meeting</h1>
+    </div>
+  <div class="bg-red-400 p-2 rounded-b flex justify-end">
+    <h1 class="bg-red-100 rounded-md w-8 h-8 flex justify-center items-center text-red-700 text-xl font-bold">+</h1>
+</div>
+</div>
 </div>
 
-	<div class="tareas">
-		<div class="wrap">
-			<ul class="lista" id="lista">
-				<!--<li><a href="#"></a></li>
-				<li><a href="#"></a></li>
-				<li><a href="#"></a></li>-->
-			</ul>
-			
-		</div>
+<section id="Dashboard-Process" class="w-80 mx-auto mt-8 bg-amber-50 rounded-lg p-4 shadow">
+  <div class="flex items-center mb-4">
+    <span class="text-red-400 text-2xl mr-3">🕒</span>
+    <div>
+      <h1 class="font-bold text-lg text-gray-800">TO DO</h1>
+      <div class="text-gray-700 text-sm flex gap-2">
+        <span>4 TASKS NOW</span>
+        <span>·</span>
+        <span>1 STARTED</span>
+      </div>
+    </div>
+  </div>
+  <div class="flex items-center mb-4">
+    <span class="text-yellow-400 text-2xl mr-3">🕒</span>
+    <div>
+      <h1 class="font-bold text-lg text-gray-800">IN PROGRESS</h1>
+      <div class="text-gray-700 text-sm flex gap-2">
+        <span>1 TASKS NOW</span>
+        <span>·</span>
+        <span>1 STARTED</span>
+      </div>
+    </div>
+  </div>
+  <div class="flex items-center">
+    <span class="text-blue-400 text-2xl mr-3">🕒</span>
+    <div>
+      <h1 class="font-bold text-lg text-gray-800">DONE</h1>
+      <div class="text-gray-700 text-sm flex gap-2">
+        <span>2 TASKS NOW</span>
+        <span>·</span>
+        <span>1 STARTED</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="w-full flex justify-center mt-8">
+  <div class="flex gap-6 bg-amber-50 rounded-lg p-6 shadow">
+    <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center w-32">
+      <svg class="mb-2" width="48" height="48">
+        <circle cx="24" cy="24" r="20" stroke="#F87171" stroke-width="4" fill="none" />
+        <circle cx="24" cy="24" r="20" stroke="#F87171" stroke-width="4" fill="none"
+          stroke-dasharray="125.6" stroke-dashoffset="25" />
+        <text x="24" y="28" text-anchor="middle" fill="#F87171" font-size="14">80%</text>
+      </svg>
+      <div class="text-xs text-gray-400 mb-1">Lorem ipsum</div>
+      <div class="font-bold text-sm mb-1">LOREM IPSUM DOLOR</div>
+      <div class="text-xs text-gray-400">TASK 1</div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center w-32">
+      <svg class="mb-2" width="48" height="48">
+        <circle cx="24" cy="24" r="20" stroke="#34D399" stroke-width="4" fill="none" />
+        <circle cx="24" cy="24" r="20" stroke="#34D399" stroke-width="4" fill="none"
+          stroke-dasharray="125.6" stroke-dashoffset="75" />
+        <text x="24" y="28" text-anchor="middle" fill="#34D399" font-size="14">40%</text>
+      </svg>
+      <div class="text-xs text-gray-400 mb-1">Lorem ipsum</div>
+      <div class="font-bold text-sm mb-1">LOREM IPSUM DOLOR</div>
+      <div class="text-xs text-gray-400">TASK 3</div>
+    </div>
+  </div>
+</section>
 		
 		<script src="./back.js"></script>
     
