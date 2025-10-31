@@ -4,6 +4,8 @@
 const contenedor = document.getElementById('contenedor');
 const fechaActual = document.getElementById('fecha-actual');
 const formData = document.getElementById('formulario-datos');
+const addReminderBtn = document.getElementById('add-reminder-btn');
+const popupReminder = document.getElementById('popup-reminder');
 
 
 //-----------------------
@@ -54,6 +56,12 @@ function createCard(title, description) {
   contenedor.appendChild(nuevoDiv);
 }
 
+function togglePopup() {
+  popupReminder.classList.remove('hidden');
+}
+
+addReminderBtn.addEventListener('click', togglePopup);
+
 
 // ------------------
 // Eventos
@@ -89,3 +97,13 @@ formData.addEventListener('submit', (event) => {
 
   formData.reset();
 });
+
+//Pendientes 
+//Crear la función de reminder y que cuando cree el nuevo reminder abrá un pop up y se pueda configurar la hora y el mensaje y cuando lo aregue usar math.ramdom para selecionar el color 
+//En agregar una nueva tarea tenemos que tomar los datos de hora y fecha y guardarlos en el local storage
+//Función para mostrar cuantas tareas hay disponibles  
+//Función para editar tareas  
+//Función para marcar tareas como completadas  
+//Función para filtrar tareas por fecha o por estado (completadas / no completadas)  
+//Agregar animaciones a las cards al crearlas y eliminarlas
+
