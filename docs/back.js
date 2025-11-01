@@ -6,6 +6,7 @@ const fechaActual = document.getElementById('fecha-actual');
 const formData = document.getElementById('formulario-datos');
 const addReminderBtn = document.getElementById('add-reminder-btn');
 const popupReminder = document.getElementById('popup-reminder');
+const cancelReminder = document.getElementById('cancelReminder')
 
 
 //-----------------------
@@ -56,11 +57,15 @@ function createCard(title, description) {
   contenedor.appendChild(nuevoDiv);
 }
 
-function togglePopup() {
-  popupReminder.classList.remove('hidden');
+function togglePopup(show) {
+
+  if (show) popupReminder.classList.remove('hidden');
+  else popupReminder.classList.add('hidden')
 }
 
-addReminderBtn.addEventListener('click', togglePopup);
+addReminderBtn.addEventListener('click', ()  => togglePopup (true));
+cancelReminder.addEventListener('click', () => togglePopup(false));
+
 
 
 // ------------------
