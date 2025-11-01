@@ -162,7 +162,6 @@ formData.addEventListener('submit', (event) => {
 });
 
 //Pendientes 
-//Crear la función de reminder y que cuando cree el nuevo reminder abrá un pop up y se pueda configurar la hora y el mensaje y cuando lo aregue usar math.ramdom para selecionar el color 
 //En agregar una nueva tarea tenemos que tomar los datos de hora y fecha y guardarlos en el local storage
 //Función para mostrar cuantas tareas hay disponibles  
 //Función para editar tareas  
