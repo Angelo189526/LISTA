@@ -4,9 +4,12 @@
 const contenedor = document.getElementById('contenedor');
 const fechaActual = document.getElementById('fecha-actual');
 const formData = document.getElementById('formulario-datos');
+const formularioReminder = document.getElementById('formulario-reminder')
 const addReminderBtn = document.getElementById('add-reminder-btn');
 const popupReminder = document.getElementById('popup-reminder');
 const cancelReminder = document.getElementById('cancelReminder')
+const saveReminder = document.getElementById('saveReminder')
+const contenedorReminder = document.getElementById('contenedorReminder')
 
 
 //-----------------------
@@ -55,6 +58,43 @@ function createCard(title, description) {
   });
 
   contenedor.appendChild(nuevoDiv);
+
+}
+
+function pickColor () {
+const colores = ["bg-red-300", "bg-blue-300", "bg-green-300", "bg-purple-400"];
+const seleccionDeColor = Math.floor(Math.random() * colores.length)
+const colorDefinido = colores[seleccionDeColor]
+return colorDefinido;
+}
+
+
+function createReminder(title, dateInput, hourInput) {
+  const color = pickColor()
+  const reminderCard = document.createElement('div');
+  reminderCard.className =
+    `flex items-center justify-between ${color} w-auto mt-4 rounded-2xl p-4 hover:scale-[1.02] transition-transform duration-200 cursor-pointer`;
+
+  reminderCard.innerHTML = `
+    <div class="flex items-center space-x-4">
+      <div class="text-black font-bold text-lg md:text-xl text-center leading-tight">
+         <p class="text-xs md:text-sm">MON</p>
+      </div>
+      <div>
+        <p class="text-gray-800 font-semibold text-sm md:text-base">${title}</p>
+        <p class="text-gray-800 text-xs md:text-sm">${hourInput}</p>
+        <p class="text-gray-800 text-xs md:text-sm" >${dateInput}</p>
+      </div>
+    </div>
+    <div class="text-blue-500 text-lg font-bold">•</div>
+  `;
+
+
+
+  contenedorReminder.appendChild(reminderCard);
+
+
+  
 }
 
 function togglePopup(show) {
@@ -66,6 +106,24 @@ function togglePopup(show) {
 addReminderBtn.addEventListener('click', ()  => togglePopup (true));
 cancelReminder.addEventListener('click', () => togglePopup(false));
 
+
+
+
+
+formularioReminder.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+const titleInput = document.getElementById('reminder-title').value.trim();;
+const dateInput = document.getElementById('reminder-date').value;
+const hourInput = document.getElementById('time').value;
+if (!titleInput || !dateInput) {
+  alert('Asegurate de rellenar todos los campos')
+  return;
+}
+createReminder(titleInput, dateInput, hourInput)
+
+  
+});
 
 
 // ------------------

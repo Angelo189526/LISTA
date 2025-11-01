@@ -69,50 +69,11 @@
         </div>
 
         <div class="space-y-4">
-          <div
-            class="flex items-center justify-between bg-red-100 rounded-2xl p-4 hover:scale-[1.02] transition-transform duration-200 cursor-pointer">
-            <div class="flex items-center space-x-4">
-              <div class="text-red-600 font-bold text-lg md:text-xl text-center leading-tight">
-                <p>11</p>
-                <p class="text-xs md:text-sm">MON</p>
-              </div>
-              <div>
-                <p class="text-gray-800 font-semibold text-sm md:text-base">Lorem Ipsum</p>
-                <p class="text-gray-500 text-xs md:text-sm">13:00</p>
-              </div>
-            </div>
-            <div class="text-red-500 text-lg font-bold">•</div>
+          <div id="contenedorReminder">
+         
           </div>
 
-          <div
-            class="flex items-center justify-between bg-yellow-100 rounded-2xl p-4 hover:scale-[1.02] transition-transform duration-200 cursor-pointer">
-            <div class="flex items-center space-x-4">
-              <div class="text-yellow-600 font-bold text-lg md:text-xl text-center leading-tight">
-                <p>12</p>
-                <p class="text-xs md:text-sm">TUE</p>
-              </div>
-              <div>
-                <p class="text-gray-800 font-semibold text-sm md:text-base">Lorem Ipsum</p>
-                <p class="text-gray-500 text-xs md:text-sm">15:00</p>
-              </div>
-            </div>
-            <div class="text-yellow-500 text-lg font-bold">•</div>
-          </div>
-
-          <div
-            class="flex items-center justify-between bg-blue-100 rounded-2xl p-4 hover:scale-[1.02] transition-transform duration-200 cursor-pointer">
-            <div class="flex items-center space-x-4">
-              <div class="text-blue-600 font-bold text-lg md:text-xl text-center leading-tight">
-                <p>13</p>
-                <p class="text-xs md:text-sm">WED</p>
-              </div>
-              <div>
-                <p class="text-gray-800 font-semibold text-sm md:text-base">Lorem Ipsum</p>
-                <p class="text-gray-500 text-xs md:text-sm">17:00</p>
-              </div>
-            </div>
-            <div class="text-blue-500 text-lg font-bold">•</div>
-          </div>
+    
         </div>
 
         <button id="add-reminder-btn"
@@ -150,15 +111,17 @@
             </div>
 
             <div class="flex relative space-x-4">
-          <button type="submit"
-            class="w-full bg-blue-600 text-white font-semibold rounded-2xl py-3 mt-4 hover:bg-blue-800 transition-colors duration-300">
-            Add Reminder
-          </button>
 
-          <button type="submit" id="cancelReminder"
+               <button type="submit" id="cancelReminder"
             class="w-full bg-red-500 text-white font-semibold rounded-2xl py-3 mt-4 hover:bg-red-600 transition-colors duration-300">
             cancel
           </button>
+          <button type="submit" id="saveReminder"
+            class="w-full bg-blue-600 text-white font-semibold rounded-2xl py-3 mt-4 hover:bg-blue-800 transition-colors duration-300">
+            Save
+          </button>
+
+         
           </div>
         </form>
 
