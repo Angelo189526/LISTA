@@ -138,6 +138,26 @@ formularioReminder.addEventListener('submit', (event) => {
   popupReminder.classList.add('hidden');
 });
 
+formData.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const title = document.getElementById('title-area').value.trim();
+  const description = document.getElementById('description-area').value.trim();
+
+  if (!title || !description) {
+    alert("Por favor completa ambos campos.");
+    return;
+  }
+
+  createCard(title, description);
+
+  const tareas = JSON.parse(localStorage.getItem('tareas')) || [];
+  tareas.push({ title, description });
+  localStorage.setItem('tareas', JSON.stringify(tareas));
+
+  formData.reset();
+});
+
 // ----------------------
 // Cargar al iniciar
 // ----------------------
